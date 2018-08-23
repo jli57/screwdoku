@@ -37,12 +37,25 @@ class SudokuGame
     pos
   end
 
+  def parse_val(string)
+    Integer(string)
+  end
+
   def get_val
     val = nil
     until val && valid_val?(val)
       puts "Please enter a value between 1 and 9 (0 to clear the tile)"
       print "> "
-      val = parse_val(gets.chomp)
+      begin
+        val = parse_val(gets.chomp)
+      rescue => e
+        # TODO: Google how to print the error that happened inside of a rescue statement.
+        puts e.message
+        puts "Invalid value entered: enter values 0 to 9"
+        puts ""
+
+        val = nil
+      end
     end
     val
   end
