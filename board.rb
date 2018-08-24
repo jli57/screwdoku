@@ -39,6 +39,10 @@ class Board
     rows.transpose!
   end
 
+  def rows
+    @grid
+  end
+
   def render
     puts "(0..8).to_a.join(" ")"
     grid.each_with_index do |row, i|
@@ -51,7 +55,7 @@ class Board
     grid.size
   end
 
-  alias_method :rows, :size
+  #alias_method :rows, :size
 
   def solved?
     rows.all? { |row| solved_set?(row) } &&
