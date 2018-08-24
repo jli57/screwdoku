@@ -65,7 +65,7 @@ class SudokuGame
 
   def valid_pos?(pos)
     if pos.is_a?(Array) &&
-      pos.length = 2 &&
+      pos.length == 2 &&
       pos.all? { |x| (0..board.size - 1).include?(x) }
       return true
     else
