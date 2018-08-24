@@ -75,6 +75,7 @@ class SudokuGame
       return true
     else
       get_pos
+    end
   end
 
   def valid_val?(val)
@@ -88,3 +89,4 @@ end
 
 
 game = SudokuGame.from_file("puzzles/sudoku1.txt")
+game.run
